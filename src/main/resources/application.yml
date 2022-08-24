@@ -1,5 +1,6 @@
 server:
   port: 80
+#  port: 10521
 
 
 spring:
@@ -8,10 +9,25 @@ spring:
     url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:springboot_demo}
     username: ${MYSQL_USERNAME}
     password: ${MySQL_PASSWORD}
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    username: root
+#    password: zhang1133..
   mvc:
     view:
       suffix: .html
       prefix: /
-
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+wx:
+  appId: wxc0016e0846645158
+  secret: 9af77250671836e1316d0750dfcd2030
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
+
+logging:
+  file:
+    name: a01.log
